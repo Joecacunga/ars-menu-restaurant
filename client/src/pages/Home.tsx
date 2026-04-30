@@ -92,9 +92,13 @@ export default function Home() {
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
           <div className="mb-6">
-            <h1 className="text-6xl md:text-7xl font-light text-white mb-2 tracking-widest">
-              ARS
-            </h1>
+            <div className="mb-4 flex justify-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-logo-realistic-irGmxLP5PRn5z4ckxxAv47.webp"
+                alt="ARS Logo"
+                className="w-32 h-32 md:w-40 md:h-40"
+              />
+            </div>
             <div className="h-px w-20 bg-accent mx-auto mb-4"></div>
             <p className="text-lg md:text-xl text-gray-300 font-light tracking-wide">
               Compromisso, Rigor e Excelência

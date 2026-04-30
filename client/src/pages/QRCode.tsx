@@ -1,5 +1,6 @@
 export default function QRCodePage() {
-  const qrImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/menu-qr-code-KAGdJSuDeX2LAoiNQPTE96.webp';
+  const qrImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-qr-code-SZnMcYUvu5wXyMk9nUSvmu.webp';
+  const logoUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-logo-realistic-irGmxLP5PRn5z4ckxxAv47.webp';
 
   const handlePrint = () => {
     window.print();
@@ -8,11 +9,17 @@ export default function QRCodePage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-4">
       <div className="max-w-md w-full">
-        {/* Header */}
+        {/* Header com Logo */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-light text-white mb-2 tracking-widest">ARS</h1>
-          <div className="h-px w-16 bg-accent mx-auto mb-4"></div>
-          <p className="text-muted-foreground font-light tracking-wide">Menu Digital</p>
+          <div className="mb-4 flex justify-center">
+            <img
+              src={logoUrl}
+              alt="ARS Logo"
+              className="w-24 h-24"
+            />
+          </div>
+          <p className="text-muted-foreground font-light tracking-wide mb-2">Menu Digital</p>
+          <p className="text-xs text-muted-foreground font-light">Compromisso, Rigor e Excelência</p>
         </div>
 
         {/* QR Code Container */}
