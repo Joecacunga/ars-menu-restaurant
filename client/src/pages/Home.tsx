@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { MenuCard } from '@/components/MenuCard';
 import { MenuCategory } from '@/components/MenuCategory';
 
@@ -54,17 +54,28 @@ const menuData = {
 };
 
 export default function Home() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  // Create refs for each category section
+  const entradasRef = useRef<HTMLDivElement>(null);
+  const pratosRef = useRef<HTMLDivElement>(null);
+  const sushiRef = useRef<HTMLDivElement>(null);
+  const pizzasRef = useRef<HTMLDivElement>(null);
+  const sobremesasRef = useRef<HTMLDivElement>(null);
+  const bebidasRef = useRef<HTMLDivElement>(null);
+  const combinadosRef = useRef<HTMLDivElement>(null);
 
   const categories = [
-    { id: 'entradas', label: 'Entradas', icon: '🥘' },
-    { id: 'pratos_principais', label: 'Pratos Principais', icon: '🍽️' },
-    { id: 'sushi', label: 'Sushi', icon: '🍣' },
-    { id: 'pizzas', label: 'Pizzas', icon: '🍕' },
-    { id: 'sobremesas', label: 'Sobremesas', icon: '🍰' },
-    { id: 'bebidas', label: 'Bebidas', icon: '🍷' },
-    { id: 'combinados', label: 'Combinados', icon: '🍱' },
+    { id: 'entradas', label: 'Entradas', icon: '🥘', ref: entradasRef },
+    { id: 'pratos_principais', label: 'Pratos Principais', icon: '🍽️', ref: pratosRef },
+    { id: 'sushi', label: 'Sushi', icon: '🍣', ref: sushiRef },
+    { id: 'pizzas', label: 'Pizzas', icon: '🍕', ref: pizzasRef },
+    { id: 'sobremesas', label: 'Sobremesas', icon: '🍰', ref: sobremesasRef },
+    { id: 'bebidas', label: 'Bebidas', icon: '🍷', ref: bebidasRef },
+    { id: 'combinados', label: 'Combinados', icon: '🍱', ref: combinadosRef },
   ];
+
+  const scrollToCategory = (ref: React.RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -95,78 +106,85 @@ export default function Home() {
       {/* Main Content */}
       <div className="container py-12 md:py-16">
         {/* Category Navigation - Minimalista */}
-        <div className="mb-16">
+        <div className="mb-16 sticky top-0 bg-background/95 backdrop-blur py-4 z-40">
           <div className="flex flex-wrap gap-3 justify-center">
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(isActive ? null : cat.id)}
-                  className={`px-5 py-2 rounded-none text-sm tracking-wide transition-all duration-300 border-b-2 ${
-                    isActive
-                      ? 'bg-transparent text-accent border-b-accent'
-                      : 'bg-transparent text-foreground border-b-transparent hover:text-accent hover:border-b-accent'
-                  }`}
-                >
-                  <span className="mr-2">{cat.icon}</span>
-                  {cat.label}
-                </button>
-              );
-            })}
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => scrollToCategory(cat.ref)}
+                className="px-5 py-2 rounded-none text-sm tracking-wide transition-all duration-300 border-b-2 bg-transparent text-foreground border-b-transparent hover:text-accent hover:border-b-accent"
+              >
+                <span className="mr-2">{cat.icon}</span>
+                {cat.label}
+              </button>
+            ))}
           </div>
         </div>
 
         {/* Menu Sections */}
         <div className="max-w-3xl mx-auto">
           {/* Entradas */}
-          <MenuCategory title="Entradas" icon="🥘">
-            {menuData.entradas.map((item, idx) => (
-              <MenuCard key={idx} item={item} />
-            ))}
-          </MenuCategory>
+          <div ref={entradasRef}>
+            <MenuCategory title="Entradas" icon="🥘">
+              {menuData.entradas.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
 
           {/* Pratos Principais */}
-          <MenuCategory title="Pratos Principais" icon="🍽️">
-            {menuData.pratos_principais.map((item, idx) => (
-              <MenuCard key={idx} item={item} />
-            ))}
-          </MenuCategory>
+          <div ref={pratosRef}>
+            <MenuCategory title="Pratos Principais" icon="🍽️">
+              {menuData.pratos_principais.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
 
           {/* Sushi */}
-          <MenuCategory title="Sushi" icon="🍣">
-            {menuData.sushi.map((item, idx) => (
-              <MenuCard key={idx} item={item} />
-            ))}
-          </MenuCategory>
+          <div ref={sushiRef}>
+            <MenuCategory title="Sushi" icon="🍣">
+              {menuData.sushi.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
 
           {/* Pizzas */}
-          <MenuCategory title="Pizzas" icon="🍕">
-            {menuData.pizzas.map((item, idx) => (
-              <MenuCard key={idx} item={item} />
-            ))}
-          </MenuCategory>
+          <div ref={pizzasRef}>
+            <MenuCategory title="Pizzas" icon="🍕">
+              {menuData.pizzas.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
 
           {/* Sobremesas */}
-          <MenuCategory title="Sobremesas" icon="🍰">
-            {menuData.sobremesas.map((item, idx) => (
-              <MenuCard key={idx} item={item} />
-            ))}
-          </MenuCategory>
+          <div ref={sobremesasRef}>
+            <MenuCategory title="Sobremesas" icon="🍰">
+              {menuData.sobremesas.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
 
           {/* Bebidas */}
-          <MenuCategory title="Bebidas" icon="🍷">
-            {menuData.bebidas.map((item, idx) => (
-              <MenuCard key={idx} item={item} />
-            ))}
-          </MenuCategory>
+          <div ref={bebidasRef}>
+            <MenuCategory title="Bebidas" icon="🍷">
+              {menuData.bebidas.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
 
           {/* Combinados */}
-          <MenuCategory title="Combinados" icon="🍱">
-            {menuData.combinados.map((item, idx) => (
-              <MenuCard key={idx} item={item} />
-            ))}
-          </MenuCategory>
+          <div ref={combinadosRef}>
+            <MenuCategory title="Combinados" icon="🍱">
+              {menuData.combinados.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
         </div>
 
         {/* Footer Info */}
