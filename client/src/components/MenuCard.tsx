@@ -16,18 +16,20 @@ export function MenuCard({ item, isExpanded = false }: MenuCardProps) {
   const [expanded, setExpanded] = useState(isExpanded);
 
   return (
-    <div className="menu-card p-4 mb-3">
+    <div className="py-4 px-0 mb-4 border-b border-border/20 hover:border-accent/30 transition-colors">
       <div className="flex justify-between items-start gap-4">
         <div className="flex-1">
-          <h3 className="dish-title mb-1">{item.name}</h3>
+          <h3 className="text-lg mb-1 font-light tracking-wide text-foreground">{item.name}</h3>
           {item.description && expanded && (
-            <p className="text-sm text-muted-foreground mt-2 mb-2">
+            <p className="text-sm text-muted-foreground mt-2 mb-2 font-light">
               {item.description}
             </p>
           )}
         </div>
-        <div className="flex items-center gap-3">
-          <span className="price-tag whitespace-nowrap">{item.price.toLocaleString('pt-AO')} kz</span>
+        <div className="flex items-center gap-4">
+          <span className="whitespace-nowrap text-base font-light text-accent">
+            {item.price.toLocaleString('pt-AO')} kz
+          </span>
           {item.description && (
             <button
               onClick={() => setExpanded(!expanded)}
@@ -35,7 +37,7 @@ export function MenuCard({ item, isExpanded = false }: MenuCardProps) {
               aria-label="Expandir detalhes"
             >
               <ChevronDown
-                size={20}
+                size={18}
                 className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
               />
             </button>

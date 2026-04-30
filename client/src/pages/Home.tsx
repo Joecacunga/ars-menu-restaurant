@@ -71,40 +71,43 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-96 md:h-[500px] overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/hero-jazz-night-KAGdJSuDeX2LAoiNQPTE96.webp"
-          alt="ARS Jazz Club"
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-hero-sophisticated-DN4qjNpsT3UAXrxNgPpW9f.webp"
+          alt="ARS Restaurant"
           className="w-full h-full object-cover"
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80"></div>
+        {/* Overlay sofisticado */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70"></div>
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold text-accent mb-2 drop-shadow-lg">
-            ARS JAZZ
-          </h1>
-          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-accent to-transparent mb-4"></div>
-          <p className="text-lg md:text-xl text-gray-200 font-light">
-            Experiência Gastronómica Premium
-          </p>
+          <div className="mb-6">
+            <h1 className="text-6xl md:text-7xl font-light text-white mb-2 tracking-widest">
+              ARS
+            </h1>
+            <div className="h-px w-20 bg-accent mx-auto mb-4"></div>
+            <p className="text-lg md:text-xl text-gray-300 font-light tracking-wide">
+              Compromisso, Rigor e Excelência
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Main Content */}
       <div className="container py-12 md:py-16">
-        {/* Category Navigation */}
-          <div className="mb-12 overflow-x-auto">
-          <div className="flex gap-2 pb-4 min-w-max">
+        {/* Category Navigation - Minimalista */}
+        <div className="mb-16">
+          <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.id;
-              const buttonClass = isActive
-                ? 'bg-accent text-primary border-accent shadow-lg shadow-accent/50'
-                : 'bg-card text-foreground border-border hover:border-accent';
               return (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(isActive ? null : cat.id)}
-                  className={`px-4 py-2 rounded-sm whitespace-nowrap transition-all duration-300 border-2 ${buttonClass}`}
+                  className={`px-5 py-2 rounded-none text-sm tracking-wide transition-all duration-300 border-b-2 ${
+                    isActive
+                      ? 'bg-transparent text-accent border-b-accent'
+                      : 'bg-transparent text-foreground border-b-transparent hover:text-accent hover:border-b-accent'
+                  }`}
                 >
                   <span className="mr-2">{cat.icon}</span>
                   {cat.label}
@@ -115,7 +118,7 @@ export default function Home() {
         </div>
 
         {/* Menu Sections */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           {/* Entradas */}
           <MenuCategory title="Entradas" icon="🥘">
             {menuData.entradas.map((item, idx) => (
@@ -167,14 +170,14 @@ export default function Home() {
         </div>
 
         {/* Footer Info */}
-        <div className="mt-16 pt-8 border-t border-border text-center">
-          <p className="text-muted-foreground text-sm mb-4">
+        <div className="mt-20 pt-12 border-t border-border/30 text-center">
+          <p className="text-muted-foreground text-sm mb-6 tracking-wide">
             Preços em Kwanzas (kz) | Sujeito a alterações
           </p>
-          <div className="flex justify-center gap-4 text-accent text-sm">
+          <div className="flex justify-center gap-6 text-accent text-sm">
             <span>📍 Luanda, Angola</span>
-            <span>•</span>
-            <span>🎵 Live Jazz</span>
+            <span className="text-border/50">•</span>
+            <span>☎️ +244 934 560 780</span>
           </div>
         </div>
       </div>
