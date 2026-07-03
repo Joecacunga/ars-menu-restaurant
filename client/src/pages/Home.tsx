@@ -3,74 +3,100 @@ import { MenuCard } from '@/components/MenuCard';
 import { MenuCategory } from '@/components/MenuCategory';
 
 const menuData = {
-  entradas: [
-    { name: 'Choco Panado', price: 10000 },
-    { name: 'Frango à Passarinho', price: 8500 },
-    { name: 'Pica-Pau', price: 11500 },
-    { name: 'Chourição Caseiro', price: 10000 },
+  couvert: [
+    { name: 'Couvert', price: 5000, description: 'Cesta de padaria, paté, manteiga, azeite, vinagre balsâmico, azeitonas' },
   ],
-  pratos_principais: [
-    { name: 'Arroz de Polvó', price: 23000 },
-    { name: 'Gambas ao Alho c/ Batata Frita e Salada', price: 20000 },
-    { name: 'Bife c/ Cogumelos, Arroz e Batata Frita (Estrogonoff)', price: 22500 },
-    { name: 'Bacalhau à ARS', price: 25000 },
+  entradas: [
+    { name: 'Creme de Abóbora', price: 5000 },
+    { name: 'Bombo com Ginguba', price: 3500 },
+    { name: 'Chourição caseiro', price: 10000 },
+    { name: 'Pica pau', price: 11500 },
+  ],
+  peixe: [
+    { name: 'Posta de Cherne', price: 14000, description: 'Puré de batata e couve' },
+    { name: 'Lombo de Garoupa', price: 14000, description: 'Molho tropical, puré de batata doce e legumes assados' },
+    { name: 'Caldo de Marisco', price: 10000, description: 'Farinha, batata doce e mandioça' },
+    { name: 'Caldo de Peixe', price: 6000, description: 'Farinha, batata doce e mandioça' },
+    { name: 'Bacalhau com Broa', price: 18000, description: 'Bacalhau desfiado com batata ao cubo, espinafre e broa ralada' },
+    { name: 'Bacalhau à Brás', price: 14000, description: 'Bacalhau desfiado com batata palha' },
+    { name: 'Filete de Garoupa', price: 14000, description: 'Arroz de tomate' },
+    { name: 'Posta de Garoupa', price: 14000, description: 'Legumes salteados, banana pão cozida' },
+  ],
+  carne: [
+    { name: 'Bife à ARS', price: 22500, description: 'Medalhões de novilho frito com molho de madeira, salada e arroz aromatizado' },
+    { name: 'Tornedó ao molho de vinho tinto', price: 26000, description: 'Lombo alto grelhado com puré de abóbora, e espinafre' },
+    { name: 'Costuleta de borrego grelhado', price: 26000, description: 'Saladas frescas, batatas fritas, legumes grelhados e espargos' },
+    { name: 'Picanha à ARS', price: 24000, description: 'Arroz aromatizado, couve mineira, banana milanesa e feijão preto' },
+    { name: 'Bife de Novilho', price: 23000, description: 'Batata doce e legumes grelhados' },
+    { name: 'Bife de Acem', price: 20000, description: 'Puré de abóbora e legumes assados' },
+    { name: 'Costela de vaca', price: 26000, description: 'Salada verde e arroz de assafrã' },
+    { name: 'Medalhões de Vitela', price: 22000, description: 'Legumes assados e arroz aromatizado' },
+    { name: 'Bife de Vezia', price: 22500, description: 'Puré de batata e espinafre' },
+  ],
+  aves: [
+    { name: 'Caril de Frango', price: 18000 },
+  ],
+  pastas_risotos: [
+    { name: 'Esparguete à Bolonhesa', price: 12000 },
+    { name: 'Esparguete de Marisco', price: 18000 },
+    { name: 'Esparguete à Gambas', price: 23000 },
+    { name: 'Risotto de Abóbora', price: 20000, description: 'Lombo de vaca' },
+    { name: 'Risotto de Tomate', price: 20000, description: 'Posta de Atum' },
+    { name: 'Risotto de Espargos', price: 20000, description: 'Lombo de Garoupa' },
+    { name: 'Esparguete alho e óleo', price: 15000 },
+    { name: 'Lasanha', price: 15000 },
+    { name: 'Tagliatelle de frutos do mar', price: 23000 },
+  ],
+  comida_tipica: [
+    { name: 'Calulu de carne seca', price: 20000, description: 'Feijão de óleo de palma e kizaca' },
+    { name: 'Calulu de peixe', price: 18000, description: 'Feijão de óleo de palma e kizaca' },
+  ],
+  saladas: [
+    { name: 'Salada verde', price: 3000 },
+    { name: 'Salada de tomate', price: 3000 },
+    { name: 'Salada mista', price: 5500 },
+    { name: 'Salada de Quinoa', price: 10800 },
+    { name: 'Salada de camarão', price: 13500 },
+    { name: 'Salada de atum', price: 7500 },
+    { name: 'Salada Cesar', price: 7000 },
+    { name: 'Salada de cuscuz', price: 10000 },
   ],
   sobremesas: [
-    { name: 'Pudim', price: 4000 },
-    { name: 'Salada de Frutas', price: 3000 },
-    { name: 'Gelados (Magnum, Solero)', price: 5000 },
-    { name: 'Bolo de Cenoura c/ Chocolate', price: 4000 },
-    { name: 'Arroz Doce', price: 3000 },
+    { name: 'Arroz doce cremoso', price: 3000 },
+    { name: 'Bolo de Laranja', price: 3000 },
+    { name: 'Bolo de Chocolate', price: 3500 },
+    { name: 'Banana Bread', price: 3500 },
     { name: 'Tiramisu', price: 7000 },
-    { name: 'Banana Bread', price: 7000 },
-  ],
-  sushi: [
-    { name: 'Sashimi (6 unid.)', price: 6000 },
-    { name: 'Nigiri (4 unid.)', price: 5000 },
-    { name: 'Gunkas (4 unid.)', price: 5000 },
-    { name: 'Hossomaki (8 unid.)', price: 8000 },
-    { name: 'Uramaki California (8 unid.)', price: 10000 },
-    { name: 'Temaki (1 unid.)', price: 8000 },
-    { name: 'Hot Philadelphia (10 unid.)', price: 14000 },
-  ],
-  pizzas: [
-    { name: 'Pizza ARS', price: 10000 },
-  ],
-  bebidas: [
-    { name: 'Fino', price: 1000 },
-    { name: 'Coquetel (c/ e s/ álcool)', price: 6500 },
-    { name: 'Sumos Naturais', price: 4000 },
-    { name: 'Caipirinha', price: 5000 },
-    { name: 'Vinho Tinto Mariana', price: 20000 },
-    { name: 'Silk Spice', price: 21000 },
-    { name: 'Espumante', price: 20000 },
-    { name: 'Shot de Tequila', price: 5000 },
-    { name: 'Gasosas (Fanta, Coca-Cola, Sprite, Sumol)', price: 1500 },
-  ],
-  combinados: [
-    { name: '15 Peças', price: 20000 },
-    { name: '20 Peças', price: 25000 },
+    { name: 'Combo ARS (Para 2 Px)', price: 11000, description: 'Bolo de ginguba, bolo de chocolate, pudim, frutas da época' },
+    { name: 'Fruta da época', price: 2000 },
+    { name: 'Misto de queijos', price: 7000 },
+    { name: 'Leite creme', price: 5000 },
+    { name: 'Pudim', price: 2800 },
   ],
 };
 
 export default function Home() {
   // Create refs for each category section
+  const couvertRef = useRef<HTMLDivElement>(null);
   const entradasRef = useRef<HTMLDivElement>(null);
-  const pratosRef = useRef<HTMLDivElement>(null);
-  const sushiRef = useRef<HTMLDivElement>(null);
-  const pizzasRef = useRef<HTMLDivElement>(null);
+  const peixeRef = useRef<HTMLDivElement>(null);
+  const carneRef = useRef<HTMLDivElement>(null);
+  const avesRef = useRef<HTMLDivElement>(null);
+  const pastasRef = useRef<HTMLDivElement>(null);
+  const comidaTipicaRef = useRef<HTMLDivElement>(null);
+  const saladaRef = useRef<HTMLDivElement>(null);
   const sobremesasRef = useRef<HTMLDivElement>(null);
-  const bebidasRef = useRef<HTMLDivElement>(null);
-  const combinadosRef = useRef<HTMLDivElement>(null);
 
   const categories = [
+    { id: 'couvert', label: 'Couvert', icon: '🥖', ref: couvertRef },
     { id: 'entradas', label: 'Entradas', icon: '🥘', ref: entradasRef },
-    { id: 'pratos_principais', label: 'Pratos Principais', icon: '🍽️', ref: pratosRef },
-    { id: 'sushi', label: 'Sushi', icon: '🍣', ref: sushiRef },
-    { id: 'pizzas', label: 'Pizzas', icon: '🍕', ref: pizzasRef },
+    { id: 'peixe', label: 'Peixe', icon: '🐟', ref: peixeRef },
+    { id: 'carne', label: 'Carne', icon: '🥩', ref: carneRef },
+    { id: 'aves', label: 'Aves', icon: '🍗', ref: avesRef },
+    { id: 'pastas', label: 'Pastas e Risotos', icon: '🍝', ref: pastasRef },
+    { id: 'comida_tipica', label: 'Comida Típica', icon: '🍲', ref: comidaTipicaRef },
+    { id: 'saladas', label: 'Saladas', icon: '🥗', ref: saladaRef },
     { id: 'sobremesas', label: 'Sobremesas', icon: '🍰', ref: sobremesasRef },
-    { id: 'bebidas', label: 'Bebidas', icon: '🍷', ref: bebidasRef },
-    { id: 'combinados', label: 'Combinados', icon: '🍱', ref: combinadosRef },
   ];
 
   const scrollToCategory = (ref: React.RefObject<HTMLDivElement | null>) => {
@@ -99,6 +125,12 @@ export default function Home() {
                 className="w-32 h-32 md:w-40 md:h-40"
               />
             </div>
+            <h1 className="text-4xl md:text-5xl font-light text-white mb-2 tracking-widest">
+              ARS - RESTAURANTE
+            </h1>
+            <h2 className="text-xl md:text-2xl text-accent font-light mb-4 tracking-wide">
+              Menu DIGITAL
+            </h2>
             <div className="h-px w-20 bg-accent mx-auto mb-4"></div>
             <p className="text-lg md:text-xl text-gray-300 font-light tracking-wide">
               Compromisso, Rigor e Excelência
@@ -111,15 +143,15 @@ export default function Home() {
       <div className="container py-12 md:py-16">
         {/* Category Navigation - Minimalista */}
         <div className="mb-16 sticky top-0 bg-background/95 backdrop-blur py-4 z-40">
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => scrollToCategory(cat.ref)}
-                className="px-5 py-2 rounded-none text-sm tracking-wide transition-all duration-300 border-b-2 bg-transparent text-foreground border-b-transparent hover:text-accent hover:border-b-accent"
+                className="px-3 md:px-5 py-2 rounded-none text-xs md:text-sm tracking-wide transition-all duration-300 border-b-2 bg-transparent text-foreground border-b-transparent hover:text-accent hover:border-b-accent"
               >
-                <span className="mr-2">{cat.icon}</span>
-                {cat.label}
+                <span className="mr-1 md:mr-2">{cat.icon}</span>
+                <span className="hidden sm:inline">{cat.label}</span>
               </button>
             ))}
           </div>
@@ -127,6 +159,15 @@ export default function Home() {
 
         {/* Menu Sections */}
         <div className="max-w-3xl mx-auto">
+          {/* Couvert */}
+          <div ref={couvertRef}>
+            <MenuCategory title="Couvert" icon="🥖">
+              {menuData.couvert.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
+
           {/* Entradas */}
           <div ref={entradasRef}>
             <MenuCategory title="Entradas" icon="🥘">
@@ -136,28 +177,55 @@ export default function Home() {
             </MenuCategory>
           </div>
 
-          {/* Pratos Principais */}
-          <div ref={pratosRef}>
-            <MenuCategory title="Pratos Principais" icon="🍽️">
-              {menuData.pratos_principais.map((item, idx) => (
+          {/* Peixe */}
+          <div ref={peixeRef}>
+            <MenuCategory title="Peixe" icon="🐟">
+              {menuData.peixe.map((item, idx) => (
                 <MenuCard key={idx} item={item} />
               ))}
             </MenuCategory>
           </div>
 
-          {/* Sushi */}
-          <div ref={sushiRef}>
-            <MenuCategory title="Sushi" icon="🍣">
-              {menuData.sushi.map((item, idx) => (
+          {/* Carne */}
+          <div ref={carneRef}>
+            <MenuCategory title="Carne" icon="🥩">
+              {menuData.carne.map((item, idx) => (
                 <MenuCard key={idx} item={item} />
               ))}
             </MenuCategory>
           </div>
 
-          {/* Pizzas */}
-          <div ref={pizzasRef}>
-            <MenuCategory title="Pizzas" icon="🍕">
-              {menuData.pizzas.map((item, idx) => (
+          {/* Aves */}
+          <div ref={avesRef}>
+            <MenuCategory title="Aves" icon="🍗">
+              {menuData.aves.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
+
+          {/* Pastas e Risotos */}
+          <div ref={pastasRef}>
+            <MenuCategory title="Pastas e Risotos" icon="🍝">
+              {menuData.pastas_risotos.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
+
+          {/* Comida Típica */}
+          <div ref={comidaTipicaRef}>
+            <MenuCategory title="Comida Típica" icon="🍲">
+              {menuData.comida_tipica.map((item, idx) => (
+                <MenuCard key={idx} item={item} />
+              ))}
+            </MenuCategory>
+          </div>
+
+          {/* Saladas */}
+          <div ref={saladaRef}>
+            <MenuCategory title="Saladas" icon="🥗">
+              {menuData.saladas.map((item, idx) => (
                 <MenuCard key={idx} item={item} />
               ))}
             </MenuCategory>
@@ -171,24 +239,6 @@ export default function Home() {
               ))}
             </MenuCategory>
           </div>
-
-          {/* Bebidas */}
-          <div ref={bebidasRef}>
-            <MenuCategory title="Bebidas" icon="🍷">
-              {menuData.bebidas.map((item, idx) => (
-                <MenuCard key={idx} item={item} />
-              ))}
-            </MenuCategory>
-          </div>
-
-          {/* Combinados */}
-          <div ref={combinadosRef}>
-            <MenuCategory title="Combinados" icon="🍱">
-              {menuData.combinados.map((item, idx) => (
-                <MenuCard key={idx} item={item} />
-              ))}
-            </MenuCategory>
-          </div>
         </div>
 
         {/* Footer Info */}
@@ -196,9 +246,9 @@ export default function Home() {
           <p className="text-muted-foreground text-sm mb-6 tracking-wide">
             Preços em Kwanzas (kz) | Sujeito a alterações
           </p>
-          <div className="flex justify-center gap-6 text-accent text-sm">
+          <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 text-accent text-sm">
             <span>📍 Luanda, Angola</span>
-            <span className="text-border/50">•</span>
+            <span className="hidden md:inline text-border/50">•</span>
             <span>☎️ +244 934 560 780</span>
           </div>
         </div>
