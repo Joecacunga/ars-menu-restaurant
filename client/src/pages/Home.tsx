@@ -108,7 +108,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-96 md:h-[500px] overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-hero-sophisticated-DN4qjNpsT3UAXrxNgPpW9f.webp"
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-menu-background-realistic-gm3dqkMUbC3X5NnErQTX7x.webp"
           alt="ARS Restaurant"
           className="w-full h-full object-cover"
         />
@@ -143,15 +143,15 @@ export default function Home() {
       <div className="container py-12 md:py-16">
         {/* Category Navigation - Minimalista */}
         <div className="mb-16 sticky top-0 bg-background/95 backdrop-blur py-4 z-40">
-          <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
+          <div className="flex flex-wrap gap-1 md:gap-3 justify-center">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => scrollToCategory(cat.ref)}
-                className="px-3 md:px-5 py-2 rounded-none text-xs md:text-sm tracking-wide transition-all duration-300 border-b-2 bg-transparent text-foreground border-b-transparent hover:text-accent hover:border-b-accent"
+                className="px-2 md:px-5 py-2 rounded-none text-xs md:text-sm tracking-wide transition-all duration-300 border-b-2 bg-transparent text-foreground border-b-transparent hover:text-accent hover:border-b-accent"
               >
                 <span className="mr-1 md:mr-2">{cat.icon}</span>
-                <span className="hidden sm:inline">{cat.label}</span>
+                <span className="inline text-xs md:text-sm">{cat.label}</span>
               </button>
             ))}
           </div>
