@@ -120,7 +120,7 @@ export default function Home() {
           <div className="mb-6">
             <div className="mb-4 flex justify-center">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-logo-realistic-irGmxLP5PRn5z4ckxxAv47.webp"
+                src="/ars-logo-gold.png"
                 alt="ARS Logo"
                 className="w-32 h-32 md:w-40 md:h-40"
               />
