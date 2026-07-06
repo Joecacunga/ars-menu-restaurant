@@ -108,7 +108,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-96 md:h-[500px] overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-hero-with-logo-YDF97N7aBZiABgKsHmT5AJ.webp"
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663028321113/ClJhSjpvQxAeLpLC.png"
           alt="ARS Restaurant"
           className="w-full h-full object-cover"
         />
