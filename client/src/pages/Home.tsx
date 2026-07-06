@@ -108,7 +108,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-96 md:h-[500px] overflow-hidden">
         <img
-          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663028321113/GnvfsLVDOOTxFlsK.png"
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663028321113/CcHhUjJuYyPnmaNq.png"
           alt="ARS Restaurant"
           className="w-full h-full object-cover"
         />
@@ -117,25 +117,7 @@ export default function Home() {
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
-          <div className="mb-6">
-            <div className="mb-4 flex justify-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028321113/WXfqbmEdfTP5Q6VjGBduAb/ars-logo-gold-sculpted-RufjtXvJqUCU4dhLAGiVcQ.webp"
-                alt="ARS Logo"
-                className="w-32 h-32 md:w-40 md:h-40"
-              />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-light text-white mb-2 tracking-widest">
-              ARS - RESTAURANT
-            </h1>
-            <h2 className="text-xl md:text-2xl text-accent font-light mb-4 tracking-wide">
-              Menu DIGITAL
-            </h2>
-            <div className="h-px w-20 bg-accent mx-auto mb-4"></div>
-            <p className="text-lg md:text-xl text-gray-300 font-light tracking-wide">
-              Compromisso, Rigor e Excelência
-            </p>
-          </div>
+          {/* Logo removido - usar apenas a imagem de fundo */}
         </div>
       </section>
 
